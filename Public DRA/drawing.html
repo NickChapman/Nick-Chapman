@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drawing Testing Grounds</title>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript" src="GRDA.js"></script>
+    <script type="text/javascript" src="graph.js"></script>
+    <script type="text/javascript">
+
+        var data = {
+            x_data : [  -100, -50, -25, -10, 20, 80, 24, -13, 17, 91 ],
+            y_data : [  -37, -100, -30, -10, 31, 12, 15, 107, 56, 92 ]
+        };
+
+        window.onload = function(){
+            var canvas = new Graph(500, 500);
+            //canvas.add_grid(canvas.x_prcnt(5), canvas.y_prcnt(5));
+            canvas.add_axes(10, 10);
+            canvas.add_minor_axes(canvas.x_prcnt(2.5), canvas.y_prcnt(2.5), 10, 10);
+            canvas.add_title("Test", 10, "Times", "lightgreen");
+            canvas.add_x_axis_label("My X Axis", 10);
+            canvas.add_y_axis_label("My Y Axis", 10);
+            canvas.graph_linear(data, 10, 10);
+            var img_path = canvas.final.toDataURL("image/png");
+            var image = document.createElement("img");
+            image.src = img_path;
+            document.getElementsByTagName("body").item(0).appendChild(image);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
