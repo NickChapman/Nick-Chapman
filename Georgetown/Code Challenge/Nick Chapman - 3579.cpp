@@ -3,9 +3,9 @@
 #include <vector>
 
 using namespace std;
-/*
-int main(){
 
+int main()
+{
 	while (true){
 		int n;
 		cin >> n;
@@ -28,4 +28,4 @@ int main(){
 		cout << output[n - 1] << endl;
 	}
 	return 0;
-}*/
+}
